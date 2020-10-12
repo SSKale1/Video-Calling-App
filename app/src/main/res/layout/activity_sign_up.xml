@@ -248,7 +248,7 @@
                 app:layout_constraintTop_toBottomOf="@id/buttonSignIn"/>
 
             <TextView
-                android:id="@+id/textSignUp"
+                android:id="@+id/textSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_20sdp"
