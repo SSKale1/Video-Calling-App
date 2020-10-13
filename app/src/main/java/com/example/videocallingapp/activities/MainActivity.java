@@ -1,8 +1,10 @@
-package com.example.videocallingapp;
+package com.example.videocallingapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.videocallingapp.R;
 
 public class MainActivity extends AppCompatActivity {
 

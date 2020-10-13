@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "606717159391",
+    "firebase_url": "https://video-calling-app-e940c.firebaseio.com",
+    "project_id": "video-calling-app-e940c",
+    "storage_bucket": "video-calling-app-e940c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606717159391:android:de665fc0d4d42d4d21066a",
+        "android_client_info": {
+          "package_name": "com.example.videocallingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606717159391-neqacaccevhha6ik48jini2p6ae6pknr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPYeAyOBdBpZNUp9uwDdwpMefmyz7tqq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606717159391-neqacaccevhha6ik48jini2p6ae6pknr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
