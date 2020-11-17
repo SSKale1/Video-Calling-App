@@ -24,7 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class SignInActivity extends AppCompatActivity {
 
 
-    private EditText inputEmail, inputpassword;
+    private EditText inputEmail, inputPassword;
     private MaterialButton buttonSignIn;
     private ProgressBar signInProgressbar;
     private PreferenceManager preferenceManager;
@@ -45,7 +45,7 @@ public class SignInActivity extends AppCompatActivity {
         findViewById(R.id.textSignUp).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), SignUpActivity.class)));
 
         inputEmail=findViewById(R.id.inputEmail);
-        inputpassword=findViewById(R.id.inputPassword);
+        inputPassword=findViewById(R.id.inputPassword);
         buttonSignIn=findViewById(R.id.buttonSignIn);
 
         signInProgressbar=findViewById(R.id.signInProgressBar);
@@ -55,7 +55,7 @@ public class SignInActivity extends AppCompatActivity {
                 Toast.makeText(SignInActivity.this,"Enter Email", Toast.LENGTH_SHORT).show();
             }else if(!Patterns.EMAIL_ADDRESS.matcher(inputEmail.getText().toString()).matches()){
                 Toast.makeText(SignInActivity.this,"Enter Valid Email", Toast.LENGTH_SHORT).show();
-            }else if(inputpassword.getText().toString().trim().isEmpty()){
+            }else if(inputPassword.getText().toString().trim().isEmpty()){
                 Toast.makeText(SignInActivity.this,"Enter Password", Toast.LENGTH_SHORT).show();
             } else {
                 signIn();
@@ -72,7 +72,7 @@ public class SignInActivity extends AppCompatActivity {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection(Constants.KEY_COLLECTION_USERS)
                 .whereEqualTo(Constants.KEY_EMAIL, inputEmail.getText().toString())
-                .whereEqualTo(Constants.KEY_PASSWORD, inputpassword.getText().toString())
+                .whereEqualTo(Constants.KEY_PASSWORD, inputPassword.getText().toString())
                 .get()
                 .addOnCompleteListener(task -> {
                     if(task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0){
