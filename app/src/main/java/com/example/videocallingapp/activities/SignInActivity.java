@@ -1,6 +1,5 @@
 package com.example.videocallingapp.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,13 +13,12 @@ import android.widget.Toast;
 import com.example.videocallingapp.R;
 import com.example.videocallingapp.utilities.Constants;
 import com.example.videocallingapp.utilities.PreferenceManager;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+
 import com.google.android.material.button.MaterialButton;
-import com.google.firebase.firestore.DocumentChange;
+
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+
 
 
 public class SignInActivity extends AppCompatActivity {
@@ -52,20 +50,17 @@ public class SignInActivity extends AppCompatActivity {
 
         signInProgressbar=findViewById(R.id.signInProgressBar);
 
-        buttonSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(inputEmail.getText().toString().trim().isEmpty()){
-                    Toast.makeText(SignInActivity.this,"Enter Email", Toast.LENGTH_SHORT).show();
-                }else if(!Patterns.EMAIL_ADDRESS.matcher(inputEmail.getText().toString()).matches()){
-                    Toast.makeText(SignInActivity.this,"Enter Valid Email", Toast.LENGTH_SHORT).show();
-                }else if(inputpassword.getText().toString().trim().isEmpty()){
-                    Toast.makeText(SignInActivity.this,"Enter Password", Toast.LENGTH_SHORT).show();
-                } else {
-                    signIn();
-                }
-
+        buttonSignIn.setOnClickListener(v -> {
+            if(inputEmail.getText().toString().trim().isEmpty()){
+                Toast.makeText(SignInActivity.this,"Enter Email", Toast.LENGTH_SHORT).show();
+            }else if(!Patterns.EMAIL_ADDRESS.matcher(inputEmail.getText().toString()).matches()){
+                Toast.makeText(SignInActivity.this,"Enter Valid Email", Toast.LENGTH_SHORT).show();
+            }else if(inputpassword.getText().toString().trim().isEmpty()){
+                Toast.makeText(SignInActivity.this,"Enter Password", Toast.LENGTH_SHORT).show();
+            } else {
+                signIn();
             }
+
         });
 
     }
